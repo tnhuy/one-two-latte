@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+
 const style = {
 	height:150,
 	width:200
 }
+
 class GoogleMap extends Component{
 	componentDidMount(){
 		// eslint-disable-next-line

@@ -13,33 +13,32 @@ const style = {
 const h3 = {
 	paddingTop: 10
 }
+
 class PostIndex extends Component {
 	componentDidMount () {
 		this.props.fetchPosts();
 	}
-
 	renderPosts (){
 		return _.map(this.props.posts, post =>{
 			return (
 				<li key={post.id}>
 					<Link to={`/posts/${post.id}`}>{post.id} {post.title}</Link>
 				</li>
-				);
+			);
 		});
 	}
-
 	render (){
 		return (
 			<div style={style}>
 				<MuiThemeProvider>
-				<RaisedButton type="submit" label="Add New Post" primary={true} containerElement={<Link to="/posts/new"/>}/>
+					<RaisedButton type="submit" label="Add New Post" primary={true} containerElement={<Link to="/posts/new"/>}/>
 				</MuiThemeProvider>
 				<h3 style={h3}>Posts</h3>
 				<ul>
 					{this.renderPosts()}
 				</ul>
 			</div>
-			);
+		);
 	}
 }
 

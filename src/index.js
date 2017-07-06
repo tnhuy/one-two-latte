@@ -17,14 +17,14 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
     	<div>
-    	<Switch>
-    		<Route path="/posts/new" component={PostsNew} />
-        <Route path="/posts/:id" component={PostShow} />
-    		<Route path="/weather" component={Weather} />
-    		<Route path="/" component={App} />
-    	</Switch>
+      	<Switch>
+      		<Route path="/posts/new" component={PostsNew} />
+              <Route path="/posts/:id" component={PostShow} />
+      		<Route path="/weather" component={Weather} />
+      		<Route path="/" component={App} />
+      	</Switch>
     	</div>
     </BrowserRouter>
   </Provider>
-  	, document.getElementById('root')
+  , document.getElementById('root')
 );

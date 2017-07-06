@@ -27,12 +27,12 @@ class PostsNew extends Component {
 			<div>
 				<div style={label}><label>{field.label}</label></div>
 				<MuiThemeProvider>
-				<TextField
-					{...field.input}
-		      		hintText="Title..."
-		      		floatingLabelText="Enter new Blog Title"
-		      		fullWidth={true}
-		    	/>
+					<TextField
+						{...field.input}
+			      		hintText="Title..."
+			      		floatingLabelText="Enter new Blog Title"
+			      		fullWidth={true}
+			    	/>
 		    	</MuiThemeProvider>
 		    	{field.meta.errors}
 	    	</div>
@@ -44,7 +44,6 @@ class PostsNew extends Component {
 		});
 
 	}
-
 	render(){
 		const {handleSubmit} = this.props;
 		return (
@@ -69,10 +68,10 @@ class PostsNew extends Component {
 							component={this.renderField}
 						/>
 						<MuiThemeProvider>
-						<RaisedButton label="Cancel" style={button}/>
+							<RaisedButton label="Cancel" style={button}/>
 						</MuiThemeProvider>
 						<MuiThemeProvider>
-    					<RaisedButton label="Submit" type="submit" primary={true} style={button}/>
+    						<RaisedButton label="Submit" type="submit" primary={true} style={button}/>
     					</MuiThemeProvider>
 					</form>
 				</div>

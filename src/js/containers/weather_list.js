@@ -11,6 +11,7 @@ const style = {
 		height: 150,
 		width:200,
 }
+
 const padding = {
 	paddingTop: 50,
 	textAlign: 'center'
@@ -25,42 +26,42 @@ class WeatherList extends Component {
 		const { lon, lat } = cityData.city.coord;
 
 		return(
-		<TableRow key={name}>
-			<TableRowColumn style={style}><GoogleMap lon={lon} lat={lat} /></TableRowColumn>
-			<TableRowColumn>
-				<Charts data={temps} color={"blue"} unit={"F"}/>
-			</TableRowColumn>
-			<TableRowColumn><Charts data={pressure} color={"red"} unit={"hPA"}/></TableRowColumn>
-			<TableRowColumn><Charts data={humidity} color={"orange"} unit={"%"}/></TableRowColumn>
-		</TableRow>
+			<TableRow key={name}>
+				<TableRowColumn style={style}><GoogleMap lon={lon} lat={lat} /></TableRowColumn>
+				<TableRowColumn>
+					<Charts data={temps} color={"blue"} unit={"F"}/>
+				</TableRowColumn>
+				<TableRowColumn><Charts data={pressure} color={"red"} unit={"hPA"}/></TableRowColumn>
+				<TableRowColumn><Charts data={humidity} color={"orange"} unit={"%"}/></TableRowColumn>
+			</TableRow>
 		);
 	}
 	render(){
 		return(
-		<div>
-			<Header />
-			<div style={padding}>
-			<MuiThemeProvider>
-			<SearchBar  />
-			</MuiThemeProvider>
-			<MuiThemeProvider>
-			<Table>
-			    <TableHeader>
-			      <TableRow>
-			        <TableHeaderColumn>City</TableHeaderColumn>
-			        <TableHeaderColumn>Temperature</TableHeaderColumn>
-			        <TableHeaderColumn>Pressure</TableHeaderColumn>
-			        <TableHeaderColumn>Humidity</TableHeaderColumn>
-			      </TableRow>
-			    </TableHeader>
-			    <TableBody>
-			    	{this.props.weather.map(this.renderWeather)}
-			    </TableBody>
-			</Table>
-			</MuiThemeProvider>
+			<div>
+				<Header />
+				<div style={padding}>
+					<MuiThemeProvider>
+						<SearchBar  />
+					</MuiThemeProvider>
+					<MuiThemeProvider>
+						<Table>
+						    <TableHeader>
+						      <TableRow>
+						        <TableHeaderColumn>City</TableHeaderColumn>
+						        <TableHeaderColumn>Temperature</TableHeaderColumn>
+						        <TableHeaderColumn>Pressure</TableHeaderColumn>
+						        <TableHeaderColumn>Humidity</TableHeaderColumn>
+						      </TableRow>
+						    </TableHeader>
+						    <TableBody>
+						    	{this.props.weather.map(this.renderWeather)}
+						    </TableBody>
+						</Table>
+					</MuiThemeProvider>
+				</div>
 			</div>
-		</div>
-		)
+		);
 	}
 }
 

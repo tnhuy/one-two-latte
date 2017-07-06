@@ -22,21 +22,18 @@ class PostShow extends Component {
 			this.props.history.push('/');
 		});
 	}
-
 	render(){
 		const { post } = this.props;
-
 		if (!post) {
 			return <div><Header /><div style={style}>loading...</div></div>;
 		}
-
 		return (
 			<div>
 				<Header />
 				<div style={style}>
 					<div>
 						<MuiThemeProvider>
-						<RaisedButton label="Delete" secondary={true} onClick={this.onDeleteClick.bind(this)}/>
+							<RaisedButton label="Delete" secondary={true} onClick={this.onDeleteClick.bind(this)}/>
 						</MuiThemeProvider>
 					</div> 
 					<h3>{post.title}</h3>

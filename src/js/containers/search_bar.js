@@ -33,16 +33,16 @@ class SearchBar extends Component {
 	render() {
 		return(
 			<div>
-			<form onSubmit={this.onFormSubmit}>
-				<TextField
-	      			hintText="Search..."
-	      			floatingLabelText="Search five-day forecast for your city"
-	      			value={this.state.term}
-	      			onChange={this.onInputChange}
-	      			style={textField}
-	    		/>
-	    		<RaisedButton type="submit" label="Primary" primary={true} style={style} />
-    		</form>
+				<form onSubmit={this.onFormSubmit}>
+					<TextField
+		      			hintText="Search..."
+		      			floatingLabelText="Search five-day forecast for your city"
+		      			value={this.state.term}
+		      			onChange={this.onInputChange}
+		      			style={textField}
+		    		/>
+		    		<RaisedButton type="submit" label="Primary" primary={true} style={style} />
+	    		</form>
     		</div>
 		);
 	}
