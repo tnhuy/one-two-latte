@@ -1,12 +1,17 @@
-import FETCH_WEATHER from '../actions/index';
+import { FETCH_WEATHER } from '../actions/index';
 
 export default function(state = [], action){
-	console.log("Action recieved", action);
-
-	switch (action.type){
+	switch (action.type) {
 		case FETCH_WEATHER:
-			return [ action.payload.data, ...state ];
-		
+			// Never mutate state
+			// return state.push(action.payload.data);
+			// concat doesn't change the existing array, it creates a new array
+			// that contains all the old stuff and new stuff
+
+			// return state.concat([action.payload.data]);
+			// above code can be written like this
+			return [ action.payload.data, ...state ];	
+		default:
 	}
 	return state;
 }
